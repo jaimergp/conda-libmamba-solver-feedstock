@@ -1,5 +1,5 @@
-{% set version = "22.3.0" %}
-{% set hash = "0b6121974b8ffac0437652275fde94818164408ecf99d02b6ea9346622bb95c7" %}
+{% set version = "22.3.1" %}
+{% set hash = "92811a3a095a2b62e6ef3b027df099e681bfffb606f977fe49fe9c66055dd54e" %}
 {% set build_number = "0" %}
 
 package:
