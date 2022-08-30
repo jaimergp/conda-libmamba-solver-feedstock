@@ -11,17 +11,19 @@ source:
   sha256: {{ hash }}
 
 build:
-  noarch: python
-  number: 0
+  skip: true  # [py<37]
+  number: {{ build_number }}
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
     - python
     - pip
+    - wheel
+    - setuptools
     - flit-core >=3.2,<4
   run:
-    - python >=3.6
+    - python
     - libmambapy >=0.23
     - conda >=4.13
     - importlib_metadata
@@ -30,7 +32,8 @@ test:
   imports:
     - conda_libmamba_solver
   commands:
-    - CONDA_SOLVER_LOGIC=libmamba conda create -n test --dry-run scipy
+    # - CONDA_SOLVER_LOGIC=libmamba conda create -n test --dry-run scipy  # [not win]  Not crosss platform.
+    - conda create --experimental-solver libmamba -n test --dry-run scipy
 
 about:
   home: https://github.com/conda-incubator/conda-libmamba-solver
@@ -39,4 +42,4 @@ about:
   license_file: LICENSE
   summary: 'The fast mamba solver, now in conda!'
   dev_url: https://github.com/conda-incubator/conda-libmamba-solver
-  doc_url: https://github.com/conda-incubator/conda-libmamba-solver/README.md
+  doc_url: https://github.com/conda-incubator/conda-libmamba-solver/blob/main/README.md
