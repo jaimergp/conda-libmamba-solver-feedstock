@@ -1,5 +1,5 @@
-{% set version = "22.8.1" %}
-{% set hash = "90d74148ed26dc0e1500f368b0b8b4097f792fe7612f402f05db5f01ec534cdf" %}
+{% set version = "22.11.0" %}
+{% set hash = "98234a99bc02be33595db96389b5eb9603188d86782941c9b8c49dbb44e19a5a" %}
 {% set build_number = "0" %}
 
 package:
@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/conda-incubator/conda-libmamba-solver/archive/refs/tags/{{ version }}.tar.gz
+  url: https://github.com/conda/conda-libmamba-solver/archive/refs/tags/{{ version }}.tar.gz
   sha256: {{ hash }}
 
 build:
@@ -24,22 +24,22 @@ requirements:
     - flit-core >=3.2,<4
   run:
     - python
-    - libmambapy >=0.23
-    - conda >=4.13
-    - importlib_metadata
+    - libmambapy >=1.0
+    - conda >=22.11
+    - importlib-metadata
 
 test:
   imports:
     - conda_libmamba_solver
   commands:
-    # - CONDA_SOLVER_LOGIC=libmamba conda create -n test --dry-run scipy  # [not win]  Not crosss platform.
-    - conda create --experimental-solver libmamba -n test --dry-run scipy
+    - CONDA_SOLVER=libmamba conda create -n test --dry-run scipy  # [not win]  Not crosss platform.
+    - conda create --solver libmamba -n test --dry-run scipy
 
 about:
-  home: https://github.com/conda-incubator/conda-libmamba-solver
+  home: https://github.com/conda/conda-libmamba-solver
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
   summary: 'The fast mamba solver, now in conda!'
-  dev_url: https://github.com/conda-incubator/conda-libmamba-solver
-  doc_url: https://github.com/conda-incubator/conda-libmamba-solver/blob/main/README.md
+  dev_url: https://github.com/conda/conda-libmamba-solver
+  doc_url: https://conda.github.io/conda-libmamba-solver/
