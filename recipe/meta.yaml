@@ -25,7 +25,7 @@ requirements:
   run:
     - python
     - libmambapy >=1.0.0
-    - conda >=22.11
+    - conda >=22.11.0
     - importlib-metadata
 
 test:
