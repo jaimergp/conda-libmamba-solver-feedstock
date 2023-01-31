@@ -1,5 +1,5 @@
-{% set version = "22.12.0" %}
-{% set hash = "5efd8a03ebcbe228d7702224855ca6a29045bbc3f9096f7c5fa54c19e8f55760" %}
+{% set version = "23.1.0" %}
+{% set hash = "090070a54572236f8e23263659520a27c31161e595a1c4feaffb70263d86a32e" %}
 {% set build_number = "0" %}
 
 package:
@@ -25,7 +25,7 @@ requirements:
   run:
     - python
     - libmambapy >=1.0.0
-    - conda >=22.11.0
+    - conda >=23.1.0
     - importlib-metadata
 
 test:
