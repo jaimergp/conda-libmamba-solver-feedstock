@@ -48,3 +48,11 @@ about:
     The library used by mamba to do the heavy-lifting is called libsolv.
   dev_url: https://github.com/conda/conda-libmamba-solver
   doc_url: https://conda.github.io/conda-libmamba-solver/
+
+extra:
+  recipe-maintainers:
+    - jaimergp
+    - jezdez
+    - wolfv
+  skip-lints:
+    - missing_pip_check
