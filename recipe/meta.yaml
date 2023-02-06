@@ -13,7 +13,7 @@ source:
 build:
   skip: true  # [py<37]
   number: {{ build_number }}
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
@@ -41,5 +41,10 @@ about:
   license_family: BSD
   license_file: LICENSE
   summary: 'The fast mamba solver, now in conda!'
+  description: |
+    The conda-libmamba-solver is a new solver for the conda package manager 
+    which uses the solver from the mamba project behind the scenes, 
+    while carefully implementing conda's functionality and expected behaviors on top. 
+    The library used by mamba to do the heavy-lifting is called libsolv.
   dev_url: https://github.com/conda/conda-libmamba-solver
   doc_url: https://conda.github.io/conda-libmamba-solver/
