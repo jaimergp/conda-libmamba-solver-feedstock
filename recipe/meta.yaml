@@ -12,6 +12,7 @@ source:
 
 build:
   skip: true  # [py<37]
+  # trigger 1
   number: {{ build_number }}
   script: {{ PYTHON }} -m pip install . -vv --no-deps
 
