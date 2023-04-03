@@ -21,6 +21,8 @@ requirements:
   host:
     - python
     - pip
+    - wheel
+    - setuptools
     - hatchling
     - hatch-vcs
   run:
