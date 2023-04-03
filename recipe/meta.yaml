@@ -2,7 +2,7 @@
 {% set version = "23.3.0" %}
 
 package:
-  name: conda-libmamba-solver
+  name: {{ name }}
   version: {{ version }}
 
 source:
