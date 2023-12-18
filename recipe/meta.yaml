@@ -12,6 +12,8 @@ source:
 
 build:
   number: 1
+  # build as noarch to avoid circular dependency issues in conda when
+  # adding support for new Python versions
   noarch: python
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{version}}
